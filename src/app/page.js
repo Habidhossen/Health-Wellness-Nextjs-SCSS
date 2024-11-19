@@ -1,3 +1,9 @@
+import Navbar from "@/components/Navbar";
+
 export default function Home() {
-  return <>Next js app heres</>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
