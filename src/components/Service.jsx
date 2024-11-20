@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 import banner2 from "../../public/images/banner2.png";
+import icon from "../../public/images/icon2.png";
 import styles from "../styles/Service.module.scss";
 
 const Service = () => {
@@ -40,11 +41,20 @@ const Service = () => {
           Free community support
         </h6>
         <button className={styles.serviceButton}>
-          Lear More About Our Services
+          Learn More About Our Services
         </button>
       </div>
-      <div>
-        <Image src={banner2} alt="banner_cover" />
+      <div className={styles.imageWrapper}>
+        <div className={styles.iconWrapper}>
+          <Image
+            className={styles.icon}
+            src={icon}
+            alt="banner_cover"
+            placeholder="blur"
+          />
+        </div>
+        {/* Image with blur effect */}
+        <Image src={banner2} alt="banner_cover" placeholder="blur" />
       </div>
     </section>
   );

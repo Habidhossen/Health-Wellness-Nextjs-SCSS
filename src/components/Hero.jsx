@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import bannerImg from "../../public/images/banner1.png";
+import icon from "../../public/images/icon1.png";
 import styles from "../styles/Hero.module.scss";
 
 const Hero = () => {
@@ -27,6 +28,7 @@ const Hero = () => {
         <button className={styles.bannerButtonOutline}>Get Started</button>
       </div>
       <div className={styles.bannerImage}>
+        <Image className={styles.bannerImgIcon} src={icon} alt="" />
         <div className={styles.overlayContent}>
           <div>
             <h6>12000+</h6>

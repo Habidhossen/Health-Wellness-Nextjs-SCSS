@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
-
+import { CiHeart, CiShoppingCart } from "react-icons/ci";
 import {
   FaCheckCircle,
   FaClock,
@@ -8,10 +7,11 @@ import {
   FaStar,
   FaStarHalfAlt,
 } from "react-icons/fa";
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import styles from "../styles/Courses.module.scss";
 
 const Courses = () => {
-  // Consolidated course data array
+  // course data array
   const courses = [
     {
       id: 1,
@@ -24,10 +24,10 @@ const Courses = () => {
       lessons: 3,
       instructor: {
         name: "Kilian Murphe",
-        image: "/images/user1.png", // Replace with actual image path
+        image: "/images/user1.png",
       },
       price: "$40",
-      image: "/images/courses1.png", // Replace with actual image path
+      image: "/images/courses1.png",
     },
     {
       id: 2,
@@ -104,6 +104,12 @@ const Courses = () => {
       <div className={styles.cardGrid}>
         {courses.map((course) => (
           <div key={course.id} className={styles.card}>
+            {/* Wishlist and Cart Icons */}
+            <div className={styles.iconContainer}>
+              <CiShoppingCart className={styles.icon} />
+              <CiHeart className={styles.icon} />
+            </div>
+
             {/* Course Image */}
             <Image
               src={course.image}
