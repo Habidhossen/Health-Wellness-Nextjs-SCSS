@@ -34,10 +34,6 @@ const Hero = () => {
           height={760}
           width={650}
         />
-
-        <div>
-          <h1>12,000+</h1>
-        </div>
       </div>
     </section>
   );
