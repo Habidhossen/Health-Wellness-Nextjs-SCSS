@@ -1,0 +1,39 @@
+@import "./variables";
+
+.reviews {
+  padding: 0 140px;
+
+  .title {
+    text-align: center;
+  }
+
+  .cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background-color: $background-color-grey;
+    border-radius: 30px;
+    padding: 10px 20px;
+
+    .cardHeader {
+      display: flex;
+
+      .cardQuote {
+        color: blue;
+      }
+
+      img {
+        border-radius: 30px;
+      }
+      h5 {
+        color: green;
+      }
+    }
+    p {
+      color: red;
+    }
+  }
+}
