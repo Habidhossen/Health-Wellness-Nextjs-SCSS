@@ -1,0 +1,35 @@
+@import "./variables";
+
+.service {
+  padding: 0 140px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .serviceTitle {
+    color: red;
+  }
+  .serviceButton {
+    margin-left: 16px;
+    padding: 15px 24px;
+    background-color: transparent;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      color: darken(white, 10%);
+    }
+  }
+  h6 {
+    color: blue;
+  }
+  img {
+    border-radius: 30px;
+  }
+}
