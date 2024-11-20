@@ -7,10 +7,12 @@
   gap: 16px;
 
   .serviceTitle {
-    color: red;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 48px;
   }
   .serviceButton {
-    margin-left: 16px;
+    margin-top: 32px;
     padding: 15px 24px;
     background-color: transparent;
     color: $primary-color;
@@ -27,9 +29,41 @@
     }
   }
   h6 {
-    color: blue;
+    color: #808080;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 36px;
+
+    span {
+      margin-right: 32px;
+    }
   }
+
+  h5 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+
+    span {
+      color: #9998e1;
+      margin-right: 32px;
+    }
+  }
+  p {
+    font-size: 13px;
+    margin-left: 52px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+
   img {
     border-radius: 30px;
+  }
+
+  .divider {
+    margin: 16px 0;
+    border: none;
+    height: 2px;
+    background-color: #f0f0f0;
   }
 }

@@ -27,13 +27,21 @@ const Hero = () => {
         <button className={styles.bannerButtonOutline}>Get Started</button>
       </div>
       <div className={styles.bannerImage}>
-        <Image
-          src={bannerImg}
-          alt="Health and Wealth"
-          placeholder="blur"
-          height={760}
-          width={650}
-        />
+        <div className={styles.overlayContent}>
+          <div>
+            <h6>12000+</h6>
+            <hr />
+            <p>Happy learners rely on us regularly</p>
+          </div>
+          <div className={styles.overlayContentDiv}>
+            <h6>Find your wellbeing</h6>
+            <p>
+              By prioritizing self-care and making informed choices, one can
+              enhance their overall quality of life
+            </p>
+          </div>
+        </div>
+        <Image src={bannerImg} alt="Health and Wealth" placeholder="blur" />
       </div>
     </section>
   );

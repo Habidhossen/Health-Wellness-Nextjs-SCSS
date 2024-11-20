@@ -1,9 +1,8 @@
 @import "./variables";
 
 .footer {
-  background-color: #f1f1f1;
-  padding: 40px 140px;
-  font-family: "Roboto", sans-serif;
+  background-color: $background-color-grey;
+  padding: 120px 140px;
 
   .footerContent {
     display: flex;
@@ -15,10 +14,10 @@
       margin-right: 30px;
 
       h3 {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: $text-color-dark;
-        margin-bottom: 10px;
+        font-size: 13px;
+        font-weight: 400;
+        color: #7a7a7b;
+        margin-bottom: 32px;
       }
 
       ul {
@@ -26,14 +25,16 @@
         padding: 0;
 
         li {
-          color: $text-color-dark;
-          font-size: 0.9rem;
-          margin-bottom: 8px;
+          color: #49494a;
+          font-size: 16px;
+          font-weight: 400;
+          margin-bottom: 12px;
           cursor: pointer;
           transition: color 0.3s;
 
           &:hover {
             color: $text-color-dark;
+            text-decoration: underline;
           }
         }
       }
@@ -41,49 +42,29 @@
   }
 
   .footerBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     text-align: center;
     border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
     padding-top: 20px;
-    font-size: 0.85rem;
-    color: $text-color-dark;
+    padding-bottom: 20px;
 
-    p {
-      margin: 10px 0;
+    h6 {
+      font-size: 20px;
+      font-weight: 500;
     }
 
     .socialIcons {
-      margin: 10px 0;
-
-      i {
-        margin: 0 15px;
-        font-size: 1.5rem;
-        color: #555;
-        cursor: pointer;
-        transition: color 0.3s;
-
-        &:hover {
-          color: $text-color-dark;
-        }
-      }
+      display: flex;
+      font-size: 24px;
+      gap: 12px;
     }
   }
 
-  // Responsive Design
-  @media screen and (max-width: 768px) {
-    padding: 20px;
-
-    .footerContent {
-      flex-direction: column;
-      align-items: center;
-
-      .footerSection {
-        margin-right: 0;
-        margin-bottom: 20px;
-      }
-    }
-
-    .footerBottom {
-      font-size: 0.8rem;
-    }
+  p {
+    margin-top: 32px;
+    font-size: 13px;
   }
 }

@@ -1,6 +1,13 @@
 import Image from "next/image";
-import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
-import { FaClock, FaReadme, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+
+import {
+  FaCheckCircle,
+  FaClock,
+  FaReadme,
+  FaStar,
+  FaStarHalfAlt,
+} from "react-icons/fa";
 import styles from "../styles/Courses.module.scss";
 
 const Courses = () => {
@@ -51,7 +58,6 @@ const Courses = () => {
         name: "Luma Karim",
         image: "/images/user3.png",
       },
-      price: "Free",
       image: "/images/courses3.png",
     },
     {
@@ -86,10 +92,10 @@ const Courses = () => {
         </div>
         <div className={styles.headerButtons}>
           <button>
-            <BsArrowLeftCircle />
+            <MdArrowBackIos />
           </button>
           <button>
-            <BsArrowRightCircle />
+            <MdArrowForwardIos />
           </button>
         </div>
       </div>
@@ -105,47 +111,63 @@ const Courses = () => {
               width={300}
               height={200}
             />
-            {/* Tags */}
-            <div>
-              <span className={styles.badge1}>{course.level}</span>
-              <span className={styles.badge2}>{course.category}</span>
-            </div>
-            {/* Title */}
-            <h2 className={styles.cardTitle}>{course.title}</h2>
-            {/* Ratings */}
-            <div className={styles.cardRatings}>
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStarHalfAlt />
-              <span>
-                {course.rating} ({course.reviews})
-              </span>
-            </div>
-            {/* Duration and Lessons */}
-            <div className={styles.cardDuration}>
-              <p>
-                <FaClock /> {course.duration}
-              </p>
-              |
-              <p>
-                <FaReadme /> {course.lessons} Lessons
-              </p>
-            </div>
-            <hr />
-            {/* Footer */}
-            <div className={styles.cardFooter}>
+            <div className={styles.cardBody}>
+              {/* Tags */}
               <div>
-                <Image
-                  src={course.instructor.image}
-                  alt={course.instructor.name}
-                  width={40}
-                  height={40}
-                />
-                <h6>{course.instructor.name}</h6>
+                <span className={styles.badge1}>{course.level}</span>
+                <span className={styles.badge2}>{course.category}</span>
               </div>
-              <h4>{course.price}</h4>
+              {/* Title */}
+              <h2 className={styles.cardTitle}>{course.title}</h2>
+              {/* Ratings */}
+              <div className={styles.cardRatings}>
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStarHalfAlt />
+                <span>
+                  {course.rating} ({course.reviews})
+                </span>
+              </div>
+              {/* Duration and Lessons */}
+              <div className={styles.cardDuration}>
+                <p>
+                  <span>
+                    <FaClock />
+                  </span>
+                  {course.duration}
+                </p>
+                <hr />
+                <p>
+                  <span>
+                    <FaReadme />
+                  </span>
+                  {course.lessons} Lessons
+                </p>
+              </div>
+              <hr className={styles.divider} />
+              <div className={styles.cardFooter}>
+                <div>
+                  <Image
+                    src={course.instructor.image}
+                    alt={course.instructor.name}
+                    width={40}
+                    height={40}
+                  />
+                  <h6>{course.instructor.name}</h6>
+                </div>
+                {course.price ? (
+                  <h4>{course.price}</h4>
+                ) : (
+                  <button>
+                    <span>
+                      <FaCheckCircle />
+                    </span>
+                    Enrolled
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         ))}

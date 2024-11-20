@@ -1,10 +1,4 @@
-import {
-  FaFacebook,
-  FaInstagram,
-  FaRss,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import styles from "../styles/Footer.module.scss";
 
 const Footer = () => {
@@ -54,16 +48,15 @@ const Footer = () => {
       </div>
 
       <div className={styles.footerBottom}>
-        <p>Join our official channels</p>
+        <h6>Join our official channels</h6>
         <div className={styles.socialIcons}>
           <FaInstagram />
           <FaTwitter />
           <FaFacebook />
-          <FaRss />
           <FaYoutube />
         </div>
-        <p>© 2024 EduPath. All rights reserved</p>
       </div>
+      <p>© 2024 EduPath. All rights reserved</p>
     </footer>
   );
 };

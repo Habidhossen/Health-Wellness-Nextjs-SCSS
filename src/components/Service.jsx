@@ -20,19 +20,19 @@ const Service = () => {
           </span>
           Follow-up after completing courses
         </h6>
-        <hr />
-        <h6>
+        <hr className={styles.divider} />
+        <h5>
           <span>
             <FaCheckCircle />
           </span>
           Access to additional resources
-        </h6>
+        </h5>
         <p>
           We offer access to a variety of additional resources to enhance your
           experience, including exclusive tools, guides, and support materials
           designed to help you achieve your goals more effectively.
         </p>
-        <hr />
+        <hr className={styles.divider} />
         <h6>
           <span>
             <FaCheckCircle />
