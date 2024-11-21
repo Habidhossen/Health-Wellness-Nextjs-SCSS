@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
 import {
   FaCheckCircle,
@@ -11,13 +12,17 @@ import {
 } from "react-icons/fa";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "../styles/Courses.module.scss";
 
 const Courses = () => {
-  // course data array
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
+  // course data
   const courses = [
     {
       id: 1,
@@ -97,10 +102,10 @@ const Courses = () => {
           </p>
         </div>
         <div className={styles.headerButtons}>
-          <button>
+          <button ref={prevRef}>
             <MdArrowBackIos />
           </button>
-          <button>
+          <button ref={nextRef}>
             <MdArrowForwardIos />
           </button>
         </div>
@@ -114,7 +119,15 @@ const Courses = () => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        modules={[Autoplay]}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onBeforeInit={(swiper) => {
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
+        }}
+        modules={[Autoplay, Navigation]}
         className={styles.swiper}
         breakpoints={{
           1024: {

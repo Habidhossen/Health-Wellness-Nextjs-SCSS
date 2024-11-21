@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: end;
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
 
     .headerContent {
       width: 50%;
@@ -162,7 +162,7 @@
       div {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 8px;
 
         h6 {
           font-size: 16px;

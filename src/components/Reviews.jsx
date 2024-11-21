@@ -2,18 +2,15 @@
 
 import Image from "next/image";
 import { FaQuoteLeft } from "react-icons/fa";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import User1 from "../../public/images/user1.png";
 import styles from "../styles/Reviews.module.scss";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// Import required modules
-import { Autoplay, Pagination } from "swiper/modules";
-
 const Reviews = () => {
+  // reviews data
   const reviews = [
     {
       name: "Kilian Murphe",
