@@ -3,60 +3,61 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { MdClose } from "react-icons/md";
 import { SlHandbag } from "react-icons/sl";
 import styles from "../styles/Navbar.module.scss";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsOpen(!isOpen);
   };
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.navLeft}>
-        <h2>Logo</h2>
-      </div>
+      <div className={styles.navContainer}>
+        {/* Logo */}
+        <div className={styles.logoContainer}>
+          <Link href="/" className={styles.logo}>
+            Logo
+          </Link>
+        </div>
 
-      <div className={`${styles.navCenter} ${isMenuOpen ? styles.open : ""}`}>
-        <ul className={styles.navLinks}>
-          <li>
-            <Link href="">
-              Courses <FaChevronDown />
-            </Link>
-          </li>
-          <li>
-            <Link href="">
-              Instructor <FaChevronDown />
-            </Link>
-          </li>
-          <li>
-            <Link href="">
-              Blogs <FaChevronDown />
-            </Link>
-          </li>
-          <li>
-            <Link href="">About</Link>
-          </li>
-          <li>
-            <Link href="">Contact</Link>
-          </li>
-        </ul>
-      </div>
+        {/* Hamburger Menu for Mobile */}
+        <div className={styles.hamburgerMenu} onClick={toggleMenu}>
+          {isOpen ? <MdClose /> : <HiOutlineMenuAlt3 />}
+        </div>
 
-      <div className={styles.navRight}>
-        <Link href="">
-          <SlHandbag />
-        </Link>
-        <button className={styles.button}>Login</button>
-      </div>
-
-      {/* Hamburger menu */}
-      <div className={styles.hamburger} onClick={toggleMenu}>
-        <div className={styles.line}></div>
-        <div className={styles.line}></div>
-        <div className={styles.line}></div>
+        {/* Navigation Links & Login Button */}
+        <div className={`${styles.navLinks} ${isOpen ? styles.active : ""}`}>
+          <div className={styles.navLinksContainer}>
+            <div className={styles.centeredLinks}>
+              <Link href="/" className={styles.navLink} onClick={toggleMenu}>
+                Courses <FaChevronDown />
+              </Link>
+              <Link href="/" className={styles.navLink} onClick={toggleMenu}>
+                Instructor <FaChevronDown />
+              </Link>
+              <Link href="/" className={styles.navLink} onClick={toggleMenu}>
+                Blogs <FaChevronDown />
+              </Link>
+              <Link href="/" className={styles.navLink} onClick={toggleMenu}>
+                About
+              </Link>
+              <Link href="/" className={styles.navLink} onClick={toggleMenu}>
+                Contact
+              </Link>
+            </div>
+            <Link href="" className={styles.iconButton}>
+              <SlHandbag />
+            </Link>
+            <Link href="/login" className={styles.button} onClick={toggleMenu}>
+              Login
+            </Link>
+          </div>
+        </div>
       </div>
     </nav>
   );

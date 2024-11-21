@@ -3,140 +3,139 @@
 .navbar {
   margin: 0 140px;
   height: 74px;
+}
+
+.navContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: $background-color-white;
-  color: $text-color-dark;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
   position: relative;
-  flex-wrap: wrap;
+}
 
-  // Navbar Sections (Left, Center, Right)
-  .navLeft,
-  .navCenter,
-  .navRight {
+.logoContainer {
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+}
+
+.hamburgerMenu {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+
+  .navLinksContainer {
     display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
   }
 
-  .navLeft {
-    flex: 1;
-  }
-
-  .navCenter {
-    flex: 2;
-    justify-content: center;
-  }
-
-  .navRight {
-    flex: 1;
-    justify-content: flex-end;
-    gap: 12px;
-
-    a {
-      color: $primary-color;
-      font-size: 24px;
-    }
-  }
-
-  // Navbar Links Styles
-  .navLinks {
+  .centeredLinks {
     display: flex;
-    justify-content: center;
     gap: 24px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-    li {
-      a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        gap: 4px;
-        color: $text-color-dark;
-        font-size: 16px;
-        font-weight: 500;
-        transition: color 0.3s;
+  .navLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 4px;
+    color: $text-color-dark;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
 
-        &:hover {
-          color: $primary-color; // Hover color
-        }
-      }
+    &:hover {
+      color: $primary-color;
     }
   }
 
-  // Button Styles
+  .iconButton {
+    color: $primary-color;
+    font-size: 24px;
+    margin-right: 12px;
+  }
+
   .button {
     background-color: $primary-color;
     border: none;
     border-radius: 32px;
     padding: 12px 24px;
     color: white;
+    text-decoration: none;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: red; // Darker shade on hover
+      background-color: darken($primary-color, 10%);
     }
   }
+}
 
-  // Mobile/Tablet Responsive Design
-  @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
+// Responsive Breakpoints
+@media screen and (max-width: 768px) {
+  .navbar {
+    margin: 0;
+  }
 
-    .navCenter {
-      margin-top: 10px;
-      width: 100%;
+  .hamburgerMenu {
+    display: block;
+    z-index: 20;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 10;
+
+    &.active {
+      transform: translateX(0);
     }
 
-    .navLinks {
+    .navLinksContainer {
       flex-direction: column;
-      gap: 10px;
-      display: none;
-
-      &.open {
-        display: flex;
-      }
-    }
-
-    .navLeft,
-    .navRight {
       justify-content: center;
-      width: 100%;
+      align-items: center;
+      height: 100%;
+      gap: 2rem;
     }
 
-    .navRight {
-      margin-top: 10px;
+    .centeredLinks {
+      position: static;
+      transform: none;
+      flex-direction: column;
+      align-items: center;
     }
-  }
 
-  // Hamburger Menu (for mobile view)
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-
-    .line {
-      width: 30px;
-      height: 4px;
-      background-color: $text-color-dark;
-      border-radius: 5px;
+    .iconButton {
+      margin-right: 0;
     }
-  }
 
-  // Show hamburger on small screens
-  @media (max-width: 768px) {
-    .hamburger {
-      display: flex;
+    .navLink,
+    .button {
+      font-size: 1.2rem;
     }
   }
 }
