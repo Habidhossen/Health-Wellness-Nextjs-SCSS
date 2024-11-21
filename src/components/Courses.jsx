@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
 import {
@@ -8,6 +10,10 @@ import {
   FaStarHalfAlt,
 } from "react-icons/fa";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "../styles/Courses.module.scss";
 
 const Courses = () => {
@@ -100,84 +106,102 @@ const Courses = () => {
         </div>
       </div>
 
-      {/* Render Course Cards */}
-      <div className={styles.cardGrid}>
+      {/* Course Cards */}
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={20}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
+        className={styles.swiper}
+        breakpoints={{
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        }}
+      >
         {courses.map((course) => (
-          <div key={course.id} className={styles.card}>
-            {/* Wishlist and Cart Icons */}
-            <div className={styles.iconContainer}>
-              <CiShoppingCart className={styles.icon} />
-              <CiHeart className={styles.icon} />
-            </div>
-
-            {/* Course Image */}
-            <Image
-              src={course.image}
-              alt={course.title}
-              width={300}
-              height={200}
-            />
-            <div className={styles.cardBody}>
-              {/* Tags */}
-              <div>
-                <span className={styles.badge1}>{course.level}</span>
-                <span className={styles.badge2}>{course.category}</span>
+          <SwiperSlide key={course.id}>
+            <div className={styles.card}>
+              <div className={styles.iconContainer}>
+                <CiShoppingCart className={styles.icon} />
+                <CiHeart className={styles.icon} />
               </div>
-              {/* Title */}
-              <h2 className={styles.cardTitle}>{course.title}</h2>
-              {/* Ratings */}
-              <div className={styles.cardRatings}>
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStarHalfAlt />
-                <span>
-                  {course.rating} ({course.reviews})
-                </span>
-              </div>
-              {/* Duration and Lessons */}
-              <div className={styles.cardDuration}>
-                <p>
-                  <span>
-                    <FaClock />
-                  </span>
-                  {course.duration}
-                </p>
-                <hr />
-                <p>
-                  <span>
-                    <FaReadme />
-                  </span>
-                  {course.lessons} Lessons
-                </p>
-              </div>
-              <hr className={styles.divider} />
-              <div className={styles.cardFooter}>
+              <Image
+                src={course.image}
+                alt={course.title}
+                width={300}
+                height={200}
+              />
+              <div className={styles.cardBody}>
                 <div>
-                  <Image
-                    src={course.instructor.image}
-                    alt={course.instructor.name}
-                    width={40}
-                    height={40}
-                  />
-                  <h6>{course.instructor.name}</h6>
+                  <span className={styles.badge1}>{course.level}</span>
+                  <span className={styles.badge2}>{course.category}</span>
                 </div>
-                {course.price ? (
-                  <h4>{course.price}</h4>
-                ) : (
-                  <button>
+                <h2 className={styles.cardTitle}>{course.title}</h2>
+                <div className={styles.cardRatings}>
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStarHalfAlt />
+                  <span>
+                    {course.rating} ({course.reviews})
+                  </span>
+                </div>
+                <div className={styles.cardDuration}>
+                  <p>
                     <span>
-                      <FaCheckCircle />
+                      <FaClock />
                     </span>
-                    Enrolled
-                  </button>
-                )}
+                    {course.duration}
+                  </p>
+                  <hr />
+                  <p>
+                    <span>
+                      <FaReadme />
+                    </span>
+                    {course.lessons} Lessons
+                  </p>
+                </div>
+                <hr className={styles.divider} />
+                <div className={styles.cardFooter}>
+                  <div>
+                    <Image
+                      src={course.instructor.image}
+                      alt={course.instructor.name}
+                      width={40}
+                      height={40}
+                    />
+                    <h6>{course.instructor.name}</h6>
+                  </div>
+                  {course.price ? (
+                    <h4>{course.price}</h4>
+                  ) : (
+                    <button>
+                      <span>
+                        <FaCheckCircle />
+                      </span>
+                      Enrolled
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </section>
   );
 };

@@ -50,10 +50,10 @@ const Navbar = () => {
                 Contact
               </Link>
             </div>
-            <Link href="" className={styles.iconButton}>
+            <Link href="" className={styles.iconButton} onClick={toggleMenu}>
               <SlHandbag />
             </Link>
-            <Link href="/login" className={styles.button} onClick={toggleMenu}>
+            <Link href="/" className={styles.button} onClick={toggleMenu}>
               Login
             </Link>
           </div>

@@ -21,8 +21,8 @@ const Hero = () => {
           We’re restoring home as the primary place of personal well-being
         </h6>
         <p>
-          Health is not just about what you're eating. It's also about what
-          you're thinking and saying
+          Health is not just about what you&apos;re eating. It&apos;s also about
+          what you&apos;re thinking and saying
         </p>
         <button className={styles.bannerButton}>Browse Courses</button>
         <button className={styles.bannerButtonOutline}>Get Started</button>

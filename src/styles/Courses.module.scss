@@ -223,3 +223,35 @@
     }
   }
 }
+
+/* Breakpoints */
+
+/* Medium Devices (md: 1023px) */
+
+@media (max-width: 1023px) {
+  .courses {
+    padding: 80px 20px;
+    .header {
+      .headerContent {
+        h1 {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
+
+/* Small Devices (sm: 640px and below) */
+
+@media (max-width: 639px) {
+  .courses {
+    padding: 60px 10px;
+    .header {
+      .headerContent {
+        h1 {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
