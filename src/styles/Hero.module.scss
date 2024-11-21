@@ -78,8 +78,8 @@
 
     .bannerImgIcon {
       position: absolute;
-      top: 120;
-      left: -35;
+      top: 120px;
+      left: -35px;
       width: 74px;
       height: 74px;
     }
@@ -135,6 +135,124 @@
         height: 48px;
         width: 2px;
         background-color: #625f61;
+      }
+    }
+  }
+}
+
+/* Breakpoints */
+
+/* Small Devices (sm: 640px and below) */
+@media (max-width: 639px) {
+  .banner {
+    flex-direction: column;
+    padding: 16px;
+    gap: 32px;
+
+    .bannerContent {
+      text-align: center;
+
+      div {
+        display: flex;
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 16px;
+      }
+      h6 {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+      p {
+        font-size: 14px;
+      }
+
+      .bannerButton,
+      .bannerButtonOutline {
+        width: 100%;
+        margin: 8px 0;
+      }
+    }
+
+    .bannerImage {
+      .bannerImgIcon {
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 50px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+      }
+    }
+
+    .overlayContent {
+      padding: 16px;
+      div {
+        flex-direction: column;
+
+        h6 {
+          font-size: 20px;
+        }
+        p {
+          font-size: 14px;
+        }
+        hr {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/* Medium Devices (md: 768px to 1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .banner {
+    flex-direction: row;
+    padding: 32px;
+    gap: 48px;
+
+    .bannerContent {
+      h1 {
+        font-size: 40px;
+      }
+      h6 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .bannerImage {
+      .bannerImgIcon {
+        top: 100px;
+        left: -20px;
+        width: 60px;
+        height: 60px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+      }
+    }
+
+    .overlayContent {
+      div {
+        h6 {
+          font-size: 32px;
+        }
+        p {
+          font-size: 18px;
+        }
       }
     }
   }

@@ -1,3 +1,54 @@
+// @import "./variables";
+
+// .reviews {
+//   padding: 120px 0;
+
+//   .title {
+//     text-align: center;
+//     font-size: 40px;
+//     font-weight: 600;
+//     padding: 0 200px;
+//     margin-bottom: 60px;
+//   }
+
+//   .cardContainer {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+//     gap: 24px;
+//   }
+
+//   .card {
+//     background-color: #ebeaf9;
+//     border: 2px solid #c2c1ed;
+//     border-radius: 13px;
+//     padding: 32px;
+
+//     .cardHeader {
+//       display: flex;
+//       justify-content: space-between;
+
+//       .cardQuote {
+//         color: #9998e1;
+//         font-size: 24px;
+//       }
+
+//       img {
+//         width: 52px;
+//         height: 52px;
+//         border-radius: 30px;
+//       }
+//       h5 {
+//         font-size: 16px;
+//         font-weight: 600;
+//         margin-top: 16px;
+//       }
+//     }
+//     p {
+//       margin-top: 24px;
+//     }
+//   }
+// }
+
 @import "./variables";
 
 .reviews {
@@ -11,12 +62,6 @@
     margin-bottom: 60px;
   }
 
-  .cardContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-  }
-
   .card {
     background-color: #ebeaf9;
     border: 2px solid #c2c1ed;
@@ -26,6 +71,7 @@
     .cardHeader {
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       .cardQuote {
         color: #9998e1;
@@ -35,16 +81,75 @@
       img {
         width: 52px;
         height: 52px;
-        border-radius: 30px;
+        border-radius: 50%;
       }
+
       h5 {
         font-size: 16px;
         font-weight: 600;
         margin-top: 16px;
       }
     }
+
     p {
       margin-top: 24px;
+      font-size: 16px;
+    }
+  }
+}
+
+/* Breakpoints */
+
+/* Medium Devices (md: 1023px) */
+
+@media (max-width: 1023px) {
+  .reviews {
+    padding: 80px 20px;
+
+    .title {
+      font-size: 32px;
+      padding: 0 100px;
+    }
+
+    .card {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/* Small Devices (sm: 640px and below) */
+
+@media (max-width: 639px) {
+  .reviews {
+    padding: 60px 10px;
+
+    .title {
+      font-size: 24px;
+      padding: 0 20px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      .cardHeader {
+        .cardQuote {
+          font-size: 18px;
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+
+        h5 {
+          font-size: 14px;
+        }
+      }
+
+      p {
+        font-size: 12px;
+      }
     }
   }
 }

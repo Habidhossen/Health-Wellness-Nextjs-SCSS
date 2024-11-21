@@ -11,6 +11,7 @@
     font-weight: bold;
     margin-bottom: 48px;
   }
+
   .serviceButton {
     margin-top: 32px;
     padding: 15px 24px;
@@ -28,6 +29,7 @@
       color: darken(white, 10%);
     }
   }
+
   h6 {
     color: #808080;
     font-size: 20px;
@@ -49,6 +51,7 @@
       margin-right: 32px;
     }
   }
+
   p {
     font-size: 13px;
     margin-left: 52px;
@@ -62,8 +65,8 @@
 
   .icon {
     position: absolute;
-    top: 120;
-    left: -35;
+    top: 120px;
+    left: -35px;
     width: 74px;
     height: 74px;
   }
@@ -77,5 +80,107 @@
     border: none;
     height: 2px;
     background-color: #f0f0f0;
+  }
+
+  /* Breakpoints */
+
+  /* Small Devices (sm: 640px and below) */
+  @media (max-width: 639px) {
+    flex-direction: column;
+    padding: 16px;
+    gap: 32px;
+
+    .serviceTitle {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    h6,
+    h5 {
+      font-size: 16px;
+      margin-bottom: 24px;
+
+      span {
+        margin-right: 16px;
+      }
+    }
+
+    p {
+      font-size: 12px;
+      margin-left: 32px;
+      margin-top: 4px;
+    }
+
+    .serviceButton {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 12px;
+    }
+
+    .imageWrapper {
+      order: -1;
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+      }
+
+      .icon {
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  /* Medium Devices (md: 640px to 1023px) */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    flex-direction: column;
+    padding: 32px;
+    gap: 48px;
+
+    .serviceTitle {
+      font-size: 32px;
+      text-align: center;
+    }
+
+    h6,
+    h5 {
+      font-size: 18px;
+
+      span {
+        margin-right: 24px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      margin-left: 24px;
+    }
+
+    .serviceButton {
+      font-size: 14px;
+      padding: 14px 22px;
+    }
+
+    .imageWrapper {
+      order: -1;
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+      }
+
+      .icon {
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 60px;
+      }
+    }
   }
 }
